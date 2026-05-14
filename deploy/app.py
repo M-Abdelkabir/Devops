@@ -32,7 +32,7 @@ def index():
 def predict():
     if model is None:
         if not load_model():
-            return jsonify({'error': 'Modèle non trouvé. Veuillez lancer l\'entraînement.'}), 500
+            return jsonify({'error': 'Modele non trouve. Veuillez lancer l\'entrainement.'}), 500
     
     try:
         data = [float(request.form[gene]) for gene in GENES]
