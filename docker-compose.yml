@@ -1,0 +1,35 @@
+version: '3.8'
+
+services:
+  # Service d'Analyse (Jupyter Notebook)
+  jupyter:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8888:8888"
+    volumes:
+      - .:/app
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    security_opt:
+      - apparmor:unconfined
+
+  # Service d'Entraînement (ML Pipeline)
+  train:
+    build: ./train
+    volumes:
+      - ./colon cancer dataset.csv:/app/colon cancer dataset.csv
+      - ./models:/models
+    restart: "no"
+
+  # Service de Déploiement (Web App Flask)
+  deploy:
+    build: ./deploy
+    ports:
+      - "5000:5000"
+    volumes:
+      - ./models:/models
+    depends_on:
+      train:
+        condition: service_completed_successfully
