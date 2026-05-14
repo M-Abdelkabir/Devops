@@ -1,10 +1,10 @@
-# 🧬 Colon Cancer Precision Oncology
+# Colon Cancer Precision Oncology
 
 Ce projet implémente un pipeline complet de Data Science et de DevOps pour la classification du cancer du côlon à partir de données d'expression génétique. Il utilise une sélection rigoureuse de **6 gènes clés** pour prédire l'état d'un patient avec une haute précision.
 
 ---
 
-## 🚀 Architecture du Projet
+## Architecture du Projet
 
 Le projet est divisé en trois services principaux orchestrés par Docker :
 
@@ -14,7 +14,7 @@ Le projet est divisé en trois services principaux orchestrés par Docker :
 
 ---
 
-## 🛠️ Installation et Lancement
+## Installation et Lancement
 
 ### 1. Prérequis
 *   Docker et Docker Compose installés sur votre machine.
@@ -36,7 +36,7 @@ docker-compose up --build train deploy
 
 ---
 
-## 📊 Gènes Sélectionnés
+## Gènes Sélectionnés
 
 Le modèle utilise les 6 gènes suivants qui offrent une exactitude de **92.31%** sur le set de test :
 *   **M63391**
@@ -48,7 +48,7 @@ Le modèle utilise les 6 gènes suivants qui offrent une exactitude de **92.31%*
 
 ---
 
-## 📁 Structure des fichiers
+## Structure des fichiers
 
 *   `logistic_regression_analysis.ipynb` : Notebook d'analyse complète.
 *   `train/` : Code source pour l'entraînement automatique du modèle.
